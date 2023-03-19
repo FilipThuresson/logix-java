@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JComponent {
-    private final int FPS = 60;
     public Board() {
 
     }
@@ -18,18 +17,6 @@ public class Board extends JComponent {
         Graphics2D graphics = (Graphics2D)arg0;
         graphics.setColor(new Color(50,50,50));
         graphics.fillRect(0, 0, getWidth(), getHeight());
-    }
-
-    public void start() {
-        while(true) {
-            try {
-                Thread.sleep(1000 / FPS); //Throttle thread
-                System.out.println("1");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            this.repaint();
-        }
     }
 
 }

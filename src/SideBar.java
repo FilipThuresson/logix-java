@@ -3,8 +3,9 @@ import java.awt.*;
 
 public class SideBar extends JComponent {
 
+    private FileMenu fileMenu;
     public SideBar() {
-
+        this.fileMenu = new FileMenu(150);
     }
 
     @Override
@@ -18,5 +19,7 @@ public class SideBar extends JComponent {
         Graphics2D graphics = (Graphics2D)arg0;
         graphics.setColor(new Color(30,30,30));
         graphics.fillRect(0, 0, getWidth(), getHeight());
+        this.fileMenu.draw(graphics);
     }
+
 }

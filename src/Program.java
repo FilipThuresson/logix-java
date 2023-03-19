@@ -15,7 +15,19 @@ public class Program extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.pack();
-        board.start();
+        this.start();
+    }
+
+    public void start() {
+        while(true) {
+            try {
+                Thread.sleep(1000 / 60); //Throttle thread
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            board.repaint();
+            sideBar.repaint();
+        }
     }
 
     public static void main(String[] args) {
